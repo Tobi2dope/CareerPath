@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Global AI Career Roadmap — Sufyan Ali Jawad Mohammed</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:       #0B0F1A;
+    --bg2:      #111827;
+    --bg3:      #1A2233;
+    --border:   rgba(255,255,255,0.08);
+    --border2:  rgba(255,255,255,0.14);
+    --text:     #E8EAF0;
+    --muted:    #8892A4;
+    --dim:      #4B5568;
+
+    --purple:   #8B80F8;
+    --purple-bg:#1E1A3A;
+    --teal:     #34D9A3;
+    --teal-bg:  #0D2B22;
+    --coral:    #F4805A;
+    --coral-bg: #2A1510;
+    --amber:    #F5B544;
+    --amber-bg: #271E08;
+    --blue:     #5BA4F5;
+    --blue-bg:  #0D1E35;
+    --green:    #6DCF7A;
+    --green-bg: #0F2214;
+
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body:    'Inter', sans-serif;
+    --radius:  10px;
+    --radius-lg: 16px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(160deg, #0D1526 0%, #0B0F1A 60%);
+    border-bottom: 1px solid var(--border);
+    padding: 64px 24px 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -120px; left: 50%; transform: translateX(-50%);
+    width: 700px; height: 400px;
+    background: radial-gradient(ellipse at center, rgba(139,128,248,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--purple);
+    margin-bottom: 16px;
+  }
+  .hero-name {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 5vw, 46px);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: 10px;
+  }
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(15px, 2.5vw, 20px);
+    font-weight: 400;
+    color: var(--muted);
+    margin-bottom: 28px;
+  }
+  .hero-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 0;
+  }
+  .chip {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 5px 13px;
+    border-radius: 20px;
+    border: 1px solid var(--border2);
+    color: var(--muted);
+    background: var(--bg2);
+  }
+  .chip.accent { border-color: var(--purple); color: var(--purple); background: var(--purple-bg); }
+
+  /* ── LAYOUT ── */
+  .container { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+  .section { padding: 52px 0; border-bottom: 1px solid var(--border); }
+  .section:last-child { border-bottom: none; }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--dim);
+    margin-bottom: 24px;
+  }
+
+  /* ── PHASE ── */
+  .phase { margin-bottom: 36px; }
+  .phase-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .phase-tag {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid var(--border2);
+    color: var(--muted);
+    background: var(--bg3);
+    white-space: nowrap;
+  }
+  .phase-desc {
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .roles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  @media (max-width: 660px) { .roles-grid { grid-template-columns: 1fr; } }
+  @media (min-width: 661px) and (max-width: 860px) { .roles-grid { grid-template-columns: repeat(2, 1fr); } }
+
+  .role-card {
+    border-radius: var(--radius);
+    padding: 16px 18px;
+    cursor: pointer;
+    transition: transform 0.18s ease, border-color 0.18s ease;
+    border: 1px solid transparent;
+    position: relative;
+  }
+  .role-card:hover { transform: translateY(-3px); }
+  .role-card:focus-visible { outline: 2px solid var(--purple); outline-offset: 2px; }
+
+  .role-card.purple { background: var(--purple-bg); border-color: rgba(139,128,248,0.3); }
+  .role-card.purple:hover { border-color: var(--purple); }
+  .role-card.teal   { background: var(--teal-bg);   border-color: rgba(52,217,163,0.3); }
+  .role-card.teal:hover   { border-color: var(--teal); }
+  .role-card.coral  { background: var(--coral-bg);  border-color: rgba(244,128,90,0.3); }
+  .role-card.coral:hover  { border-color: var(--coral); }
+  .role-card.amber  { background: var(--amber-bg);  border-color: rgba(245,181,68,0.3); }
+  .role-card.amber:hover  { border-color: var(--amber); }
+  .role-card.blue   { background: var(--blue-bg);   border-color: rgba(91,164,245,0.3); }
+  .role-card.blue:hover   { border-color: var(--blue); }
+  .role-card.green  { background: var(--green-bg);  border-color: rgba(109,207,122,0.3); }
+  .role-card.green:hover  { border-color: var(--green); }
+
+  .role-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  .purple .role-dot { background: var(--purple); }
+  .teal   .role-dot { background: var(--teal); }
+  .coral  .role-dot { background: var(--coral); }
+  .amber  .role-dot { background: var(--amber); }
+  .blue   .role-dot { background: var(--blue); }
+  .green  .role-dot { background: var(--green); }
+
+  .role-title {
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 4px;
+    line-height: 1.3;
+  }
+  .role-sub {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  .role-hint {
+    font-size: 11px;
+    color: var(--dim);
+    margin-top: 6px;
+  }
+
+  .arrow-connector {
+    text-align: center;
+    padding: 6px 0;
+    color: var(--dim);
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  /* ── DETAIL PANEL ── */
+  .detail-panel {
+    background: var(--bg3);
+    border: 1px solid var(--border2);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    margin-top: 16px;
+    display: none;
+    animation: fadeIn 0.2s ease;
+  }
+  .detail-panel.visible { display: block; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+  .detail-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+  .detail-title {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+  }
+  .close-btn {
+    background: var(--bg2);
+    border: 1px solid var(--border2);
+    color: var(--muted);
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: color 0.15s;
+    font-family: var(--font-body);
+  }
+  .close-btn:hover { color: #fff; }
+
+  .detail-desc {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.65;
+    margin-bottom: 20px;
+  }
+  .detail-markets {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  @media (max-width: 600px) { .detail-markets { grid-template-columns: 1fr; } }
+
+  .market-col {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+  }
+  .market-col-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: var(--dim);
+    margin-bottom: 8px;
+  }
+  .market-col-val {
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.7;
+    white-space: pre-line;
+  }
+
+  /* ── MARKET CARDS ── */
+  .markets-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  @media (max-width: 700px) { .markets-grid { grid-template-columns: 1fr; } }
+
+  .market-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    transition: border-color 0.2s;
+  }
+  .market-card:hover { border-color: var(--border2); }
+
+  .market-flag { font-size: 28px; margin-bottom: 10px; }
+  .market-name {
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .market-stat {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 4px;
+    line-height: 1.5;
+  }
+  .market-stat strong { color: var(--text); font-weight: 500; }
+  .market-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+  .mpill {
+    font-size: 11px;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 20px;
+    border: 1px solid;
+  }
+  .mpill.green { color: var(--green);  border-color: rgba(109,207,122,0.35); background: var(--green-bg); }
+  .mpill.blue  { color: var(--blue);   border-color: rgba(91,164,245,0.35);  background: var(--blue-bg); }
+  .mpill.amber { color: var(--amber);  border-color: rgba(245,181,68,0.35);  background: var(--amber-bg); }
+  .mpill.purple{ color: var(--purple); border-color: rgba(139,128,248,0.35); background: var(--purple-bg); }
+
+  /* ── SKILLS ── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  @media (max-width: 580px) { .skills-grid { grid-template-columns: 1fr; } }
+
+  .skill-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+  }
+  .skill-cat {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--dim);
+    margin-bottom: 8px;
+  }
+  .skill-items {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+  .skill-tag {
+    display: inline-block;
+    background: var(--bg3);
+    border: 1px solid var(--border2);
+    border-radius: 5px;
+    font-size: 11px;
+    padding: 2px 8px;
+    margin: 2px 3px 2px 0;
+    color: var(--text);
+    font-family: 'Inter', monospace;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    text-align: center;
+    padding: 40px 24px;
+    font-size: 12px;
+    color: var(--dim);
+    border-top: 1px solid var(--border);
+  }
+  .footer a { color: var(--purple); text-decoration: none; }
+  .footer a:hover { text-decoration: underline; }
+
+  /* ── DIVIDER ── */
+  hr { border: none; border-top: 1px solid var(--border); }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">Global AI Career Roadmap</div>
+  <h1 class="hero-name">Sufyan Ali Jawad Mohammed</h1>
+  <p class="hero-title">CS Graduate · AI/ML Specialist · MBA in Applied AI in Business</p>
+  <div class="hero-chips">
+    <span class="chip">B.S. Computer Science</span>
+    <span class="chip">M.S. CS — DBMS &amp; AI/ML</span>
+    <span class="chip accent">MBA Applied AI (in progress)</span>
+    <span class="chip">IT Analyst II — Education</span>
+    <span class="chip">Dallas, TX</span>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- CAREER PATH -->
+  <div class="section">
+    <div class="section-label">Career path — click any role for details</div>
+
+    <!-- Phase 1 -->
+    <div class="phase">
+      <div class="phase-header">
+        <span class="phase-tag">Now → 1 year</span>
+        <span class="phase-desc">Transition from IT Analyst into AI/ML-focused roles</span>
+      </div>
+      <div class="roles-grid">
+        <div class="role-card purple" tabindex="0" onclick="showDetail('ml-engineer')" onkeydown="if(event.key==='Enter')showDetail('ml-engineer')">
+          <div class="role-dot"></div>
+          <div class="role-title">ML Engineer</div>
+          <div class="role-sub">Build &amp; deploy machine learning models in production systems</div>
+          <div class="role-hint">Direct match for your M.S. AI/ML focus</div>
+        </div>
+        <div class="role-card teal" tabindex="0" onclick="showDetail('data-scientist')" onkeydown="if(event.key==='Enter')showDetail('data-scientist')">
+          <div class="role-dot"></div>
+          <div class="role-title">Applied Data Scientist</div>
+          <div class="role-sub">Analytics + ML to drive real business decisions</div>
+          <div class="role-hint">DBMS background is a strong differentiator</div>
+        </div>
+        <div class="role-card blue" tabindex="0" onclick="showDetail('ai-analyst')" onkeydown="if(event.key==='Enter')showDetail('ai-analyst')">
+          <div class="role-dot"></div>
+          <div class="role-title">AI / BI Analyst</div>
+          <div class="role-sub">Data pipelines, dashboards &amp; actionable insights</div>
+          <div class="role-hint">Low-friction step from IT Analyst II</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="arrow-connector">↓</div>
+
+    <!-- Phase 2 -->
+    <div class="phase">
+      <div class="phase-header">
+        <span class="phase-tag">1 – 4 years</span>
+        <span class="phase-desc">MBA complete — bridge technical depth with business leadership</span>
+      </div>
+      <div class="roles-grid">
+        <div class="role-card teal" tabindex="0" onclick="showDetail('ai-pm')" onkeydown="if(event.key==='Enter')showDetail('ai-pm')">
+          <div class="role-dot"></div>
+          <div class="role-title">AI Product Manager</div>
+          <div class="role-sub">Own AI product roadmap end-to-end across engineering &amp; business</div>
+          <div class="role-hint">Rare profile — most PMs lack your technical depth</div>
+        </div>
+        <div class="role-card coral" tabindex="0" onclick="showDetail('digital-transform')" onkeydown="if(event.key==='Enter')showDetail('digital-transform')">
+          <div class="role-dot"></div>
+          <div class="role-title">Digital Transformation Lead</div>
+          <div class="role-sub">Drive AI adoption programs across entire organisations</div>
+          <div class="role-hint">Education sector experience is real credibility here</div>
+        </div>
+        <div class="role-card purple" tabindex="0" onclick="showDetail('ai-consultant')" onkeydown="if(event.key==='Enter')showDetail('ai-consultant')">
+          <div class="role-dot"></div>
+          <div class="role-title">AI Strategy Consultant</div>
+          <div class="role-sub">Advise enterprises on where and how to deploy AI</div>
+          <div class="role-hint">MBA unlocks senior consulting track</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="arrow-connector">↓</div>
+
+    <!-- Phase 3 -->
+    <div class="phase">
+      <div class="phase-header">
+        <span class="phase-tag">5 – 10 years</span>
+        <span class="phase-desc">Executive &amp; entrepreneurial ceiling</span>
+      </div>
+      <div class="roles-grid">
+        <div class="role-card amber" tabindex="0" onclick="showDetail('caio')" onkeydown="if(event.key==='Enter')showDetail('caio')">
+          <div class="role-dot"></div>
+          <div class="role-title">Chief AI Officer (CAIO)</div>
+          <div class="role-sub">Lead enterprise-wide AI vision, governance &amp; implementation</div>
+          <div class="role-hint">Fastest-growing C-suite title globally</div>
+        </div>
+        <div class="role-card green" tabindex="0" onclick="showDetail('vp-data')" onkeydown="if(event.key==='Enter')showDetail('vp-data')">
+          <div class="role-dot"></div>
+          <div class="role-title">VP / Director of Data &amp; AI</div>
+          <div class="role-sub">Lead data science teams, own strategy &amp; delivery</div>
+          <div class="role-hint">Senior individual contributor → people leader path</div>
+        </div>
+        <div class="role-card amber" tabindex="0" onclick="showDetail('founder')" onkeydown="if(event.key==='Enter')showDetail('founder')">
+          <div class="role-dot"></div>
+          <div class="role-title">AI Startup Founder</div>
+          <div class="role-sub">Build AI products with global reach and real traction</div>
+          <div class="role-hint">Your CS + MBA + ops background is a founder blueprint</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Detail Panel -->
+    <div class="detail-panel" id="detail-panel">
+      <div class="detail-top">
+        <div class="detail-title" id="detail-title"></div>
+        <button class="close-btn" onclick="closeDetail()">✕ close</button>
+      </div>
+      <p class="detail-desc" id="detail-desc"></p>
+      <div class="detail-markets">
+        <div class="market-col">
+          <div class="market-col-label">🇺🇸 United States</div>
+          <div class="market-col-val" id="detail-us"></div>
+        </div>
+        <div class="market-col">
+          <div class="market-col-label">🇮🇳 India</div>
+          <div class="market-col-val" id="detail-in"></div>
+        </div>
+        <div class="market-col">
+          <div class="market-col-label">🌍 Middle East (UAE / KSA)</div>
+          <div class="market-col-val" id="detail-me"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MARKETS -->
+  <div class="section">
+    <div class="section-label">Market snapshot — where your profile travels</div>
+    <div class="markets-grid">
+      <div class="market-card">
+        <div class="market-flag">🇺🇸</div>
+        <div class="market-name">United States — DFW</div>
+        <div class="market-stat"><strong>$110k – $160k/yr</strong> for ML/AI roles</div>
+        <div class="market-stat">Strong contract market in fintech, telecom, healthcare &amp; edtech</div>
+        <div class="market-stat">Employers: McKesson, Citi Irving, American Airlines, AT&amp;T</div>
+        <div class="market-pills">
+          <span class="mpill blue">Contract-friendly</span>
+          <span class="mpill green">FAANG spillover</span>
+          <span class="mpill purple">Edtech growing</span>
+        </div>
+      </div>
+      <div class="market-card">
+        <div class="market-flag">🇮🇳</div>
+        <div class="market-name">India — Bangalore · Hyderabad</div>
+        <div class="market-stat"><strong>₹18 – 35 LPA</strong> mid-level; ₹40 – 60 LPA senior</div>
+        <div class="market-stat">1M+ AI jobs by 2026; NASSCOM AI boom driving demand</div>
+        <div class="market-stat">US experience commands 30–40% premium at MNCs</div>
+        <div class="market-pills">
+          <span class="mpill green">Fastest growing</span>
+          <span class="mpill amber">US exp. premium</span>
+          <span class="mpill blue">Skills-first hiring</span>
+        </div>
+      </div>
+      <div class="market-card">
+        <div class="market-flag">🌍</div>
+        <div class="market-name">Middle East — UAE · Saudi Arabia</div>
+        <div class="market-stat"><strong>AED 18k – 55k/mo</strong> · $80k – $120k+ tax-free</div>
+        <div class="market-stat">Vision 2030 + UAE AI Strategy 2031 creating sustained demand</div>
+        <div class="market-stat">Employers: G42, ADNOC, MBZUAI, NEOM, Saudi SDAIA</div>
+        <div class="market-pills">
+          <span class="mpill amber">Tax-free income</span>
+          <span class="mpill blue">Visa sponsored</span>
+          <span class="mpill green">Gov AI projects</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SKILLS -->
+  <div class="section">
+    <div class="section-label">Skills to build — portable across all three markets</div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-cat">Technical foundation (you have this)</div>
+        <div class="skill-items">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">ML Frameworks</span>
+          <span class="skill-tag">DBMS</span>
+          <span class="skill-tag">Data Pipelines</span>
+          <span class="skill-tag">Cloud Basics</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-cat">Build next — high value globally</div>
+        <div class="skill-items">
+          <span class="skill-tag">MLOps</span>
+          <span class="skill-tag">LLM / RAG</span>
+          <span class="skill-tag">GenAI APIs</span>
+          <span class="skill-tag">Vector DBs</span>
+          <span class="skill-tag">AWS / Azure ML</span>
+          <span class="skill-tag">Databricks</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-cat">Business layer (MBA gives you this)</div>
+        <div class="skill-items">
+          <span class="skill-tag">AI Strategy</span>
+          <span class="skill-tag">Stakeholder Comms</span>
+          <span class="skill-tag">ROI Framing</span>
+          <span class="skill-tag">Product Thinking</span>
+          <span class="skill-tag">Ethics &amp; Governance</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-cat">Certifications that travel well</div>
+        <div class="skill-items">
+          <span class="skill-tag">AWS ML Specialty</span>
+          <span class="skill-tag">Google Cloud ML</span>
+          <span class="skill-tag">Azure DP-100</span>
+          <span class="skill-tag">PMP (AI Projects)</span>
+          <span class="skill-tag">Databricks Certified</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  Built by <a href="https://github.com/sufyanjawad" target="_blank">Sufyan Ali Jawad Mohammed</a> · CS + AI/ML + MBA Applied AI in Business · Dallas, TX
+</div>
+
+<script>
+const roles = {
+  'ml-engineer': {
+    title: 'ML Engineer',
+    desc: 'Builds, trains, and deploys machine learning models into production systems. Your M.S. specialization in AI/ML is a direct match — this is the most natural first transition role from IT Analyst. Strong DBMS background also helps you work with data infrastructure that most ML engineers struggle with.',
+    us: '$110k – $145k/yr\nDallas, Austin, Remote\nContract market strong\nKey industries: telecom, fintech, healthcare',
+    in: '₹18 – 30 LPA\nBangalore, Hyderabad\nTCS, Infosys, Wipro, startups\nUS experience = premium package',
+    me: 'AED 20k – 40k/mo\nDubai, Abu Dhabi, Riyadh\nG42, ADNOC, KAUST\nVision 2030 + visa sponsorship'
+  },
+  'data-scientist': {
+    title: 'Applied Data Scientist',
+    desc: 'Uses ML and statistics to solve real business problems. Your CS background plus MBA is exactly what employers mean when they say "data scientist with business acumen." DBMS specialization makes you stand out in data-heavy environments like banking and edtech.',
+    us: '$115k – $150k/yr\nStrong demand in fintech, healthcare, edtech\nDFW: Citi Irving, McKesson Plano',
+    in: '₹15 – 28 LPA mid-level\n₹30 – 50 LPA with US exp.\nMNCs prefer US-returned talent\nFlipkart, Paytm, Amazon India',
+    me: 'AED 18k – 35k/mo\nGovernment AI labs hiring\nKAUST, Saudi Aramco, SDAIA\nMBZUAI in Abu Dhabi'
+  },
+  'ai-analyst': {
+    title: 'AI / BI Analyst',
+    desc: 'Bridges raw data infrastructure with business insight using dashboards, reports, and lightweight ML. Your IT Analyst II background in education transfers almost directly — low-friction entry into the data/AI world that builds toward a data scientist role within 12–18 months.',
+    us: '$85k – $115k/yr\nEntry-level bridge role\nEdtech and university systems hiring',
+    in: '₹10 – 20 LPA\nEvery sector actively hiring\nGood stepping stone with fast progression',
+    me: 'AED 12k – 22k/mo\nGovernment digital offices\nSmart city projects in Dubai, NEOM'
+  },
+  'ai-pm': {
+    title: 'AI Product Manager',
+    desc: 'Owns the product roadmap for AI-powered tools — from problem definition to shipped feature. This is where your technical depth and MBA converge most powerfully. Most product managers lack your ML fluency, and most ML engineers lack your business framing. That gap is you.',
+    us: '$130k – $180k/yr\nMost sought-after AI role in 2026\nDFW: fintech, American Airlines, AT&T',
+    in: '₹20 – 40 LPA\nBooming: Flipkart, Paytm, Zomato, MNCs\nUS background commands strong premium',
+    me: 'AED 25k – 45k/mo\nFintech: Tabby, Tamara, DIFC\nVisa sponsorship standard for senior PMs'
+  },
+  'digital-transform': {
+    title: 'Digital Transformation Lead',
+    desc: 'Leads AI/ML adoption programs across organisations — from strategy to change management to implementation. Your education-sector IT experience gives you real credibility here because you understand institutional friction, legacy systems, and how to get non-technical stakeholders on board.',
+    us: '$120k – $160k/yr\nConsulting firms or in-house\nStrong in healthcare, edtech, government',
+    in: '₹18 – 35 LPA\nBig4 consulting, Wipro, Infosys\nFast-growing function across all sectors',
+    me: 'AED 22k – 40k/mo\nGovernment digital transformation programs\nVision 2030 KSA and UAE AI Strategy 2031'
+  },
+  'ai-consultant': {
+    title: 'AI Strategy Consultant',
+    desc: 'Advises enterprises on where and how to use AI — feasibility, build vs. buy, ROI, governance. An MBA is effectively a requirement for senior consulting. Your technical background means you can go technically deep where generalist consultants cannot, which makes you far more valuable.',
+    us: '$140k – $200k/yr\nBCG, Deloitte, Accenture Digital\nDallas has a strong consulting market',
+    in: '₹22 – 40 LPA\nDeloitte India, McKinsey, KPMG, EY\nHigh demand post-MBA, especially AI track',
+    me: 'AED 28k – 50k/mo\nBig4 offices in Dubai and Riyadh\nGovernment AI advisory roles very active'
+  },
+  'caio': {
+    title: 'Chief AI Officer (CAIO)',
+    desc: 'Leads enterprise-wide AI vision, governance, and execution at the C-suite level. Emerging role that did not exist 5 years ago. Your complete profile — CS master\'s in AI/ML, MBA Applied AI, IT operations background, and hands-on experience — is the exact pipeline for this role over 7–10 years.',
+    us: '$220k – $400k+ /yr\nEnterprise and Fortune 500\nFastest-growing C-suite title in the US',
+    in: '₹60 – 120 LPA\nMultinationals and large Indian tech cos\nRare and extremely high demand',
+    me: 'AED 50k – 90k/mo + allowances\nSovereign wealth-backed entities\nG42, NEOM, government ministries'
+  },
+  'vp-data': {
+    title: 'VP / Director of Data & AI',
+    desc: 'Runs data science and AI teams — owns strategy, delivery, hiring, and stakeholder management. Requires 5–8 years of hands-on work plus demonstrated leadership. Your trajectory maps to this naturally as you accumulate management exposure through AI PM and consultant roles.',
+    us: '$175k – $260k/yr\nAll major sectors\nStrong demand in finance, health, and tech',
+    in: '₹50 – 100 LPA\nMNCs and large Indian technology companies\nUS-returned professionals strongly preferred',
+    me: 'AED 40k – 70k/mo\nUAE National AI Strategy ecosystem\nSaudi SDAIA and G42 expanding rapidly'
+  },
+  'founder': {
+    title: 'AI Startup Founder',
+    desc: 'Build and scale an AI product company. Your CS depth covers the technical side. Your MBA covers the business side. Your IT Analyst II role in education gives you a real problem domain. This is the entrepreneurial ceiling of the entire roadmap — and it works in all three markets.',
+    us: 'US incorporation straightforward\nSilicon Valley, Austin, DFW ecosystem\nVC funding accessible with your credentials',
+    in: 'India AI startup market booming\n$200B+ AI investment wave in 2026\nBangalore + Hyderabad hubs for AI cos',
+    me: 'UAE free zones for expat founders\nHub71 Abu Dhabi: funded AI startup program\nSaudi Vision 2030 startup grants available'
+  }
+};
+
+function showDetail(id) {
+  const r = roles[id];
+  if (!r) return;
+  document.getElementById('detail-title').textContent = r.title;
+  document.getElementById('detail-desc').textContent = r.desc;
+  document.getElementById('detail-us').textContent = r.us;
+  document.getElementById('detail-in').textContent = r.in;
+  document.getElementById('detail-me').textContent = r.me;
+  const panel = document.getElementById('detail-panel');
+  panel.classList.add('visible');
+  setTimeout(() => panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
+}
+
+function closeDetail() {
+  document.getElementById('detail-panel').classList.remove('visible');
+}
+</script>
+</body>
+</html>
